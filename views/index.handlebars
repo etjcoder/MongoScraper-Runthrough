@@ -1,0 +1,39 @@
+<div class="container" style="text-align: center; background: black; color: white">
+
+    <h1>Property and Casualty Study Tool</h1>
+
+    <div class="row">
+
+        {{#each cards}}
+        <div class="col-lg-5" style="color: black">
+            <div class="card">
+                <div class="card-title">
+                    <h5>Flash Card<h5>
+                </div>
+                <div class="card-body">
+                    <p>{{front}}</p>
+                    <hr>
+                    <p>{{back}}</p>
+                    <hr>
+                    <button class="btn btn-outline-primary btn-sm show-comment-btn" id="show-comment-{{_id}}" value={{_id}}>Show Comments</button>
+                </div>
+                <div class="card-body comment-box" id="comments-{{_id}}">
+                    <button class="btn btn-outline-danger btn-sm hide-comments-btn" id="hide-comment-{{_id}}" value={{id}}>Hide Comments</button>
+
+                        <hr>
+                        <p>Test Comment</p>
+                        <hr>
+                    
+                    <form id="make-comment">
+                        <input type="text" name="comment">
+                    </form>
+                    <button type="submit" class="btn btn-outline-success btn-sm post-comment-btn" value={{id}}>Submit Comment</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        {{/each}}
+    </div>
+
+</div>
