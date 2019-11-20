@@ -19,13 +19,13 @@
                 </div>
                 <div class="card-body comment-box" id="comments-{{_id}}">
                     <button class="btn btn-outline-danger btn-sm hide-comments-btn" id="hide-comment-{{_id}}" value={{id}}>Hide Comments</button>
-
+                        {{#each cards.comments}}
                         <hr>
-                        <p>Test Comment</p>
-                        <hr>
+                        <p>{{comments.body}}</p>
+                        {{/each}}
                     
                     <form id="make-comment">
-                        <input type="text" name="comment">
+                        <input type="text" id="comment" name="comment">
                     </form>
                     <button type="submit" class="btn btn-outline-success btn-sm post-comment-btn" value={{id}}>Submit Comment</button>
 

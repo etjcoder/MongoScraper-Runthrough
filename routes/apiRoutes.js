@@ -38,5 +38,18 @@ module.exports = function (app) {
         })
     })
 
+    app.post("/comment/:id", function(req, res) {
+
+        db.Comment.create(req.body)
+            .then(function(dbComment) {
+                return db.Card.findOneAndUpdate({_id: req.params.id}, { $push: { comments: dbComment._id} }, {new: true});
+            }).then(function(dbCard) {
+                res.json(dbCard);
+            })
+            .catch(function(err){
+                res.json(err);
+            })
+    })
+
 
 }

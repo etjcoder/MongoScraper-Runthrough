@@ -3,27 +3,29 @@ var path = require("path");
 
 module.exports = function (app) {
 
-    app.get("/", function(req, res) {
+    app.get("/", function (req, res) {
         var cardArray = []
 
         var hbsObject = {
             cards: cardArray
         }
 
-        db.Card.find({}).then(function(data) {
-            
-            console.log(data);
+        db.Card.find({})
+            .populate("cards")
+            .then(function (data) {
 
-            for (var i = 0; i < data.length; i++) {
+                console.log(data);
 
-                cardArray.push(data[i])
+                for (var i = 0; i < data.length; i++) {
 
-            }
+                    cardArray.push(data[i])
 
-            setTimeout(function() {
-                res.render("index", hbsObject)
-            }, 500)
-        })
+                }
+
+                setTimeout(function () {
+                    res.render("index", hbsObject)
+                }, 500)
+            })
 
     })
 
