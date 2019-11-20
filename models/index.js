@@ -1,4 +1,4 @@
 module.exports = {
-    Card = require("./Card"),
-    Comment = require("./Comment")
+    Card: require("./Card.js"),
+    Comment: require("./Comment.js")
 }

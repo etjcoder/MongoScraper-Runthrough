@@ -1,4 +1,4 @@
-var mongoose = require("mognoose");
+var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
@@ -18,7 +18,7 @@ var CardSchema = new Schema({
     comments: [
         {
             type: Schema.Types.ObjectId,
-            ref: Comment
+            ref: "Comment"
         }
     ]
 });
