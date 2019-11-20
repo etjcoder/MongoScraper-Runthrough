@@ -11,10 +11,10 @@ module.exports = function (app) {
         }
 
         db.Card.find({})
-            .populate("cards")
+            .populate("comments")
             .then(function (data) {
 
-                console.log(data);
+                console.log(data[0]);
 
                 for (var i = 0; i < data.length; i++) {
 
