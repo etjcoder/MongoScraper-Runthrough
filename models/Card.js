@@ -6,11 +6,13 @@ var CardSchema = new Schema({
     front: {
         type: String,
         required: true,
+        unique: true,
         default: "Please Skip this Card"
     },
     back: {
         type: String,
         required: true,
+        unique: true,
         default: "Please Skip this Card"
     },
     comments: [
